@@ -5,7 +5,7 @@
 //  Created by 张佐玮 on 15/5/18.
 //  Copyright (c) 2015年 JarvisZhang. All rights reserved.
 //
-//  Title:  Reverse Linked List
+//  Title: Reverse Linked List
 //
 
 #include <iostream>

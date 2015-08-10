@@ -30,7 +30,7 @@ public:
             depth++;
         }
         if (depth > 0) {
-            count += pow(2, depth -1) - 1;
+            count += pow(2, depth - 1) - 1;
         }
         current = root;
         while (depth > 1) {

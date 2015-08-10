@@ -5,7 +5,7 @@
 //  Created by 张佐玮 on 15/5/18.
 //  Copyright (c) 2015年 JarvisZhang. All rights reserved.
 //
-//  Title:  Reverse Words in a String
+//  Title: Reverse Words in a String
 //
 #include <iostream>
 
