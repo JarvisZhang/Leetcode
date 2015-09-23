@@ -19,17 +19,16 @@ public:
         int water = 0, start = 0, end = (int) height.size() - 1;
         while (start < end) {
             if (height[start] <= height[end]) {
-                int border = height[start];
-                while (++start < end && height[start] <= border) {
-                    water += border - height[start];
+                int border = height[start++];
+                while (start < end && height[start] <= border){
+                    water += border - height[start++];
                 }
             }
             else {
-                int border = height[end];
-                while(start < --end && height[end] <= border) {
-                    water += border -height[end];
+                int border = height[end--];
+                while (start < end && height[end] <= border) {
+                    water += border - height[end--];
                 }
-                
             }
         }
         return water;

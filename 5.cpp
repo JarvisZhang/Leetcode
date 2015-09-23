@@ -60,11 +60,13 @@ public:
         string s4("adbcbddaadd");   //ddaadd
         string s5("aaaa");          //aaaa
         string s6("szzdknk");       //knk
+        string s7("");
         runTest(s1);
         runTest(s2);
         runTest(s3);
         runTest(s4);
         runTest(s5);
         runTest(s6);
+        runTest(s7);
     }
 };

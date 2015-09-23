@@ -24,27 +24,38 @@ public:
         if (head == NULL) {
             return head;
         }
-        ListNode *top = new ListNode(0), *front = top;
-        top -> next = head;
-        while (front -> next != NULL) {
-            ListNode *middle = front;
-            while (middle -> next != NULL && middle -> next -> val >= x) {
-                middle = middle -> next;
+        ListNode *top1 = new ListNode(0),*top2 = new ListNode(0);
+        ListNode *sCurrent = top1, *bCurrent = top2;
+        while (head != NULL) {
+            ListNode *temp = head;
+            head = head -> next;
+            if (temp -> val < x) {
+                sCurrent -> next = temp;
+                sCurrent = sCurrent -> next;
             }
-            ListNode *rear = middle;
-            while (rear -> next != NULL && rear -> next -> val < x) {
-                rear = rear -> next;
+            else {
+                bCurrent -> next = temp;
+                bCurrent = bCurrent -> next;
             }
-            if (front != middle && middle != rear) {
-                ListNode *temp = middle -> next;
-                middle -> next = rear -> next;
-                rear -> next = front -> next;
-                front -> next = temp;
-            }
-            front = rear;
         }
-        head = top -> next;
-        delete top;
+        ListNode *current = sCurrent;
+        if (top2 -> next != NULL ) {
+            current -> next = top2 -> next;
+            current = bCurrent;
+        }
+        current -> next = NULL;
+        head = top1 -> next;
+        delete top1; delete top2;
         return head;
+    }
+};
+
+class Test {
+public:
+    void sample() {
+        Solution solution;
+        ListNode *node1 = new ListNode(2), *node2 = new ListNode(1);
+        node1 -> next = node2;
+        solution.partition(node1, 1);
     }
 };
